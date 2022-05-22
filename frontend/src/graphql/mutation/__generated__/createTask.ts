@@ -11,10 +11,10 @@ import { TaskType } from "./../../../../__generated__/globalTypes";
 
 export interface createTask_createTask {
   __typename: "Task";
-  id: string;
+  id?: string;
   body: string;
-  isCompleted: boolean | null;
-  createdAt: any;
+  isCompleted?: boolean | null;
+  createdAt?: any;
 }
 
 export interface createTask {

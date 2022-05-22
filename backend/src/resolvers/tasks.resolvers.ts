@@ -37,11 +37,11 @@ export class TaskResolver {
   }
   
   @Mutation(() => Task, {name: 'completeTask'})
-  async completeTask(@Arg('completeTask') {id}: TaskType): Promise<Task> {
+  async completeTask(@Arg('completeTask') {id, isCompleted}: TaskType): Promise<Task> {
     const task = await TaskModel.findByIdAndUpdate(
       {_id: id},
       {
-        isCompleted: true,
+        isCompleted: !isCompleted,
       },
       { new: false}
     )
